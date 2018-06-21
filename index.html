@@ -1,20 +1,35 @@
+
 <!DOCTYPE html>
-<html lang="fr">
-  <head>
-    <meta charset="utf-8" />
-
-    <link rel="stylesheet" href="assets/css/master.css" />
-    <title>EXERCICE4</title>
-  </head>
-  <body>
-
-    <script>
-    // Affectation des variables
-    var  lastName, firstName, city;
-    lastName = prompt('Quel est votre nom ? ');
-    firstName = prompt('Quel est votre prenom ? ');
-    city  = prompt('Ou habitez vous ? ');
-    alert('\n' + lastName + '\n' + firstName + '\n' + city);
-    </script>
-  </body>
+<html>
+<head>
+  <title>Exercice_4</title>
+  <meta charset="UTF-8" />
+</head>
+<body>
+  <form>
+    <label for="lastname">Nom : </label><input type="text" name="lastname" id="lastname"/>
+    <label for="firstname">Prénom : </label><input type="text" name="firstname" id="firstname"/>
+    <label for="city">Ville : </label><input type="text" name="city" id="city"/>
+    <button  name="submit" id="submit">Valider</button>
+  </form>
+</body>
+</html>
+<script>
+// Affectation des variables
+/*Déclaration fonction identité*/
+function identity() {
+/*Déclaration des variable*/
+  var lastname = document.getElementById('lastname').value;
+  var firstname = document.getElementById('firstname').value;
+  var city = document.getElementById('city').value;
+  var regex = /^[a-zA-Z\-éèëïäîç]+$/;
+/*Boite de dialogue avec appel des variables*/
+  if((regex.test(lastname) == true) && (regex.test(firstname) == true) && (regex.test(city) == true)){
+    alert('Nom: ' + lastname + '\nPrenom: ' + firstname + '\nVille: ' + city);
+  }else{
+    alert('Recommencez sans les chiffres');
+  }
+  }
+</script>
+</body>
 </html>
